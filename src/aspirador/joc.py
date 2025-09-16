@@ -23,3 +23,7 @@ class Aspirador(joc.JocNoGrafic):
         # TODO
         pass
 
+
+    def comencar(self):
+        # TODO
+        pass

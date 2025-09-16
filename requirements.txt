@@ -1,6 +1,6 @@
-audio.wave==4.0.2
+#audio.wave==4.0.2
 numpy==2.3.2
 PyInstaller==6.14.2
 PyOpenGL==3.1.9
 setuptools==78.1.1
-VideoCapture==0.9.5
+#VideoCapture==0.9.5
