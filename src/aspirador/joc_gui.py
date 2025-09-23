@@ -1,6 +1,6 @@
 """ Joc de l'aspirador.
 
-Autor: Miquel Miró Niclau (UIB), 2024
+Autor: Miquel Miró Nicolau (UIB), 2024
 
 """
 import random
@@ -45,7 +45,7 @@ class Aspirador(joc.Joc):
                 raise AspiradorRomput
             self.__loc = 1
         elif accio == "E":
-            if self.__loc is 0:
+            if self.__loc == 0:
                 raise AspiradorRomput
             self.__loc = 0
         elif accio == "S":

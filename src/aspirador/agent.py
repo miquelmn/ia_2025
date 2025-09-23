@@ -41,7 +41,7 @@ class AspiradorTaula(Aspirador):
         (0, True): "D",
         (0, False): "A",
         (1, True): "E",
-        (1, False): "S",
+        (1, False): "A",
     }
 
     def actua(self, percepcio: dict):
@@ -52,10 +52,31 @@ class AspiradorTaula(Aspirador):
 
 class AspiradorReflex(Aspirador):
     def actua(self, percepcio: dict):
-        """ TODO """
+        if not percepcio["Net"]:
+            return "A"
+
+        if percepcio["Loc"] == 0:
+            return "D"
+        else:
+            return "E"
 
 
 class AspiradorMemoria(Aspirador):
-    def actua(self, percepcio: dict):
-        """ TODO """
+    MEM = [False, False]
 
+    def actua(self, percepcio: dict):
+        net = True
+        for hab in AspiradorMemoria.MEM:
+            net = net and hab
+
+        if net:
+            return "S"
+
+        if not percepcio["Net"]:
+            return "A"
+
+        AspiradorMemoria.MEM[percepcio["Loc"]] = True
+        if percepcio["Loc"] == 0:
+            return "D"
+        else:
+            return "E"
