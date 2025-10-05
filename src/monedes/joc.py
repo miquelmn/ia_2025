@@ -1,4 +1,3 @@
-import enum
 import random
 
 import pygame
@@ -15,6 +14,8 @@ class Moneda(joc.Joc):
 
         if random_order:
             monedes = ''.join(random.sample(monedes, len(monedes)))
+
+        print(f"Monedes {monedes}")
 
         self.__monedes = monedes
 
@@ -33,23 +34,23 @@ class Moneda(joc.Joc):
     def _aplica(self, accio, params=None, agent_actual=None) -> None:
         id_moneda = params
         monedes_aux = list(self.__monedes)
-        if accio is "D": # Desplaçar
+        if accio == "D": # Desplaçar
             if (self.__empty_pos() != (id_moneda - 1)) and (
                     self.__empty_pos() != (id_moneda + 1)
             ):
                 raise joc.HasPerdut("Moneda una damunt l'altra")
             monedes_aux[id_moneda] = " "
             monedes_aux[self.__empty_pos()] = self.__monedes[id_moneda]
-        elif accio is "B": # Botar
+        elif accio == "B": # Botar
             if (self.__empty_pos() != (id_moneda - 2)) and (
                     self.__empty_pos() != (id_moneda + 2)
             ):
                 raise joc.HasPerdut("Moneda una damunt l'altra")
             monedes_aux[id_moneda] = " "
             monedes_aux[self.__empty_pos()] = self.__gira(self.__monedes[id_moneda])
-        elif accio is "G": # Girar
+        elif accio == "G": # Girar
             monedes_aux[id_moneda] = self.__gira(self.__monedes[id_moneda])
-        elif accio is not "R": # Res
+        elif not accio == "R": # Res
             raise Exception(f"Acció no existent en aquest joc: {accio}")
 
         self.__monedes = "".join(monedes_aux)
