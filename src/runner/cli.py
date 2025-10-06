@@ -24,20 +24,24 @@ def aspirador():
 
 @app.command()
 def quiques():
-    """ Executa la tasca aspirador"""
+    """ Executa la tasca quiques"""
     run_module("quiques")
 
 
 @app.command()
 def monedes():
-    """ Executa la tasca aspirador"""
+    """ Executa la tasca monedes"""
     run_module("monedes")
 
 @app.command()
-def monedes():
-    """ Executa la tasca aspirador"""
+def practica():
+    """ Executa la tasca de la pràctica"""
     run_module("practica")
 
+@app.command()
+def tictac():
+    """ Executa la tasca tic-tac-toe"""
+    run_module("tictac")
 
 @app.command()
 def prova():
