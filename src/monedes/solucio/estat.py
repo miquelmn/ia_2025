@@ -26,12 +26,12 @@ class Estat:
         # Desplaçar
         for desp in (1, -1):
             if 0 <= (pos_blanc + desp) < 5:
-                acc_possibles.append(("D", desp))
+                acc_possibles.append(("D", (pos_blanc + desp)))
 
         # Botar
         for desp in (2, -2):
             if 0 <= (pos_blanc + desp) < 5:
-                acc_possibles.append(("B", desp))
+                acc_possibles.append(("B", (pos_blanc + desp)))
 
         return acc_possibles
 
@@ -56,7 +56,16 @@ class Estat:
         return self.__info == other.info
 
     def es_meta(self) -> bool:
-        return self.__info == SOLUCIO
+        """ Funció que comprova si l'estat és un estat meta.
+
+        Returns:
+            Boolean: True si l'estat és meta, False en cas contrari.
+        """
+        es_meta = True
+        for moneda, sol in zip(self.__info, SOLUCIO):
+            es_meta = es_meta and (moneda == sol)
+
+        return es_meta
 
     def transicio(self, acc):
         nou_estat = copy.deepcopy(self)
