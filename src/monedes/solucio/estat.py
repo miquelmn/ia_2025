@@ -78,7 +78,7 @@ class Estat:
         elif acc == "D" or acc == "B":
             moneda = nou_estat.info[pos]
             if acc == "B":
-                moneda = self.gira(moneda)
+                moneda = Estat.gira(moneda)
 
             nou_estat.info[self.__pos_lliure()] = moneda
             nou_estat.info[pos] = " "
