@@ -167,7 +167,7 @@ class Laberint(joc.Joc):
 			parets (llista d'enters): Posicions a on hi ha una paret.
 		"""
 		if parets is None:
-			parets = [i for i in range(self.size) if random.randint(0, 3) == 0]
+			parets = [i for i in range(self.size) if random.randint(0, 2) == 0]
 
 		for paret in parets:
 			x, y = paret // self.__mida_taulell[0], paret % self.__mida_taulell[0]
@@ -260,10 +260,13 @@ class Laberint(joc.Joc):
 			for y, cas in enumerate(row):
 				cas.draw(window, x, y)
 
-	def percepcio(self) -> dict:
+	def percepcio(self):
+		torn = self.__agents[self.turn % len(self.__agents)].nom
+
 		return {
 			"PARETS": self.__parets,
 			"DESTI": self.__desti,
 			"AGENTS": self.pos_agents,
-			"MIDA": self.__mida_taulell
+			"MIDA": self.__mida_taulell,
+			"TORN": torn
 		}
