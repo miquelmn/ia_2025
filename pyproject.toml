@@ -5,8 +5,9 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "ialib",
+    "ialib>=0.2.3",
     "pygame>=2.6.1",
+    "scipy>=1.16.2",
     "typer>=0.16.0",
 ]
 
