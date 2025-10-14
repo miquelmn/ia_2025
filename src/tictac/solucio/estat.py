@@ -32,7 +32,7 @@ class Estat:
 
         return ocupats == len(self.taulell[0]) * len(self.taulell[1])
 
-    def __guanyador(self):
+    def guanyador(self):
         if self.__es_meta is None:
             for pos in [(0, 0), (1, 0), (2, 0)]:
                 meta = victoria.victoria(self.taulell, pos)
@@ -45,7 +45,7 @@ class Estat:
 
     def es_meta(self) -> bool:
         ple = self.es_ple()
-        guanyador = self.__guanyador()
+        guanyador = self.guanyador()
 
         return guanyador or ple
 

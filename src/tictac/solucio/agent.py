@@ -16,7 +16,10 @@ class Agent(agent.Agent):
 
     def cerca(self, estat, torn_max=True):
         if estat.es_meta():
-            return estat, (1 if not torn_max else -1) # Retornam l'estat i la puntuació
+            res = 0
+            if estat.guanyador():
+                res = (1 if not torn_max else -1)
+            return estat, res
 
         puntuacio_fills = []
 

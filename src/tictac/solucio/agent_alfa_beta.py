@@ -17,7 +17,7 @@ class Agent(agent.Agent):
     def cerca(self, estat: Estat, alpha, beta, torn_max=True):
         if estat.es_meta():
             res = 0
-            if not estat.es_ple():
+            if estat.guanyador():
                 res = (1 if not torn_max else -1)
             return estat, res
 
