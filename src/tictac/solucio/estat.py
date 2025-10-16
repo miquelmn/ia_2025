@@ -34,7 +34,7 @@ class Estat:
 
     def guanyador(self):
         if self.__es_meta is None:
-            for pos in [(0, 0), (1, 0), (2, 0)]:
+            for pos in [(0, 0), (1, 1), (2, 2)]:
                 meta = victoria.victoria(self.taulell, pos)
                 if meta:
                     break
