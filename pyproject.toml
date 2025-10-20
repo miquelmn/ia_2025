@@ -8,6 +8,7 @@ dependencies = [
     "ialib>=0.2.3",
     "pygame>=2.6.1",
     "scipy>=1.16.2",
+    "tqdm>=4.67.1",
     "typer>=0.16.0",
 ]
 
