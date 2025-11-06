@@ -15,7 +15,7 @@ class AgentSARSA(agent.Agent):
         random.seed(seed)
 
 
-    def epsilon_greedy(self):
+    def epsilon_greedy(self, eps):
         """ Selects an action using the epsilon-greedy policy.
 
         TODO
